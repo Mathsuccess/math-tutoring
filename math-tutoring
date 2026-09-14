@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preeti Nag, OCT — Math Tutor</title>
+<meta name="description" content="One-on-one math tutoring in Sarnia, ON for grades 8 through college. Algebra, geometry, trigonometry, calculus, and statistics, taught by an OCT-certified teacher with 15+ years in the classroom.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #faf8f3;
+    --grid-line: #dcdfe6;
+    --ink: #26282e;
+    --ink-soft: #565c66;
+    --pencil-blue: #33479b;
+    --highlight: #ffcf3f;
+    --navy: #1b2340;
+    --paper-card: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 100% 32px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 32px 100%,
+      var(--paper);
+    background-attachment: local;
+    color: var(--ink);
+    font-family: "Inter", -apple-system, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+  }
+
+  a { color: var(--pencil-blue); }
+
+  h1, h2, h3 {
+    font-family: "Fraunces", Georgia, serif;
+    color: var(--ink);
+    margin: 0 0 0.4em 0;
+    font-weight: 500;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250, 248, 243, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--grid-line);
+  }
+  nav .wrap {
+    max-width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .nav-name {
+    font-family: "Fraunces", serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 0.95rem;
+  }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--pencil-blue); }
+
+  /* ---------- Hero ---------- */
+  header.hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 64px 24px 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 32px;
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    line-height: 1.15;
+  }
+  .hero p.lede {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .hero-actions {
+    margin-top: 28px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98rem;
+    border: 1.5px solid var(--ink);
+  }
+  .btn-solid {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn-solid:hover { background: var(--pencil-blue); border-color: var(--pencil-blue); }
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+  }
+  .btn-outline:hover { border-color: var(--pencil-blue); color: var(--pencil-blue); }
+
+  .hero-figure svg { width: 100%; height: auto; }
+
+  /* ---------- Sections ---------- */
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 56px 24px;
+    border-top: 1px solid var(--grid-line);
+  }
+  section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+  }
+  .section-lede {
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin: -12px 0 28px;
+  }
+
+  /* Subjects */
+  .subject-group {
+    margin-bottom: 30px;
+  }
+  .subject-group:last-child { margin-bottom: 0; }
+  .subject-group h3 {
+    font-size: 1.05rem;
+    color: var(--pencil-blue);
+    margin-bottom: 4px;
+  }
+  .subject-group .group-note {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    margin: 0 0 12px;
+  }
+  .subject-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .subject-list li {
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--grid-line);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 1rem;
+  }
+  .subject-list li span.level {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .subjects-source-note {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--grid-line);
+  }
+
+  /* About / skills */
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+  }
+  .skills-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .skills-list li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--pencil-blue);
+  }
+
+  /* How it works — genuinely sequential, numbering earned */
+  .steps {
+    counter-reset: step;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .step .num {
+    counter-increment: step;
+    font-family: "Fraunces", serif;
+    font-size: 1.3rem;
+    color: var(--pencil-blue);
+  }
+  .step .num::before { content: counter(step); }
+  .step h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .step p { margin: 0; color: var(--ink-soft); }
+
+  /* Testimonial */
+  .testimonial {
+    background: var(--paper-card);
+    border: 1px solid var(--grid-line);
+    border-left: 3px solid var(--highlight);
+    padding: 28px 32px;
+    border-radius: 2px;
+  }
+  .testimonial p.quote {
+    font-family: "Fraunces", serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0 0 12px;
+  }
+  .testimonial p.attr {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+  .testimonial-form-wrap {
+    margin-top: 32px;
+  }
+  .testimonial-form-wrap h3 {
+    font-size: 1.1rem;
+  }
+
+  /* Pricing */
+  .rates {
+    display: grid;
+    gap: 14px;
+  }
+  .rate-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 18px;
+    background: var(--paper-card);
+    border: 1px solid var(--grid-line);
+    border-radius: 2px;
+  }
+  .rate-row .amount {
+    font-family: "Fraunces", serif;
+    font-size: 1.3rem;
+    background: linear-gradient(to bottom, transparent 60%, var(--highlight) 60%);
+    padding: 0 2px;
+  }
+  .rates-note {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-top: 8px;
+  }
+
+  /* Contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .contact-list { list-style: none; padding: 0; margin: 0; }
+  .contact-list li { margin-bottom: 14px; font-size: 1.02rem; }
+  .contact-list .label { display: block; color: var(--ink-soft); font-size: 0.85rem; }
+
+  form.contact-form { display: flex; flex-direction: column; gap: 12px; }
+  form.contact-form input,
+  form.contact-form textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 11px 12px;
+    border: 1px solid var(--grid-line);
+    border-radius: 3px;
+    background: var(--paper-card);
+    color: var(--ink);
+  }
+  form.contact-form textarea { resize: vertical; min-height: 90px; }
+  form.contact-form button {
+    align-self: flex-start;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  form.contact-form .form-status {
+    min-height: 1.2em;
+    font-size: 0.9rem;
+    margin: 4px 0 0;
+  }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 24px 48px;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 680px) {
+    .hero { grid-template-columns: 1fr; padding-top: 40px; }
+    .hero-figure { order: -1; max-width: 260px; margin: 0 auto; }
+    .subject-list { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 8px; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--pencil-blue);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Preeti Nag, OCT</div>
+    <div class="nav-links">
+      <a href="#subjects">Subjects</a>
+      <a href="#about">About</a>
+      <a href="#how">How it works</a>
+      <a href="#book">Book a session</a>
+      <a href="#rates">Rates</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div>
+    <h1>Math makes more sense with someone next to you.</h1>
+    <p class="lede">One-on-one tutoring for grade 8 through college — algebra, geometry, trigonometry, calculus, and statistics. Taught by an OCT-certified math teacher with 15+ years in Ontario classrooms, online or in person in Sarnia, ON.</p>
+    <div class="hero-actions">
+      <a class="btn btn-solid" href="#contact">Book a free intro call</a>
+      <a class="btn btn-outline" href="#rates">See rates</a>
+    </div>
+  </div>
+  <div class="hero-figure" aria-hidden="true">
+    <svg viewBox="0 0 340 300" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="30,250 320,250" stroke="#565c66" stroke-width="1.5" fill="none"/>
+      <polyline points="55,20 55,270" stroke="#565c66" stroke-width="1.5" fill="none"/>
+      <text x="303" y="268" font-family="Fraunces, serif" font-size="14" fill="#565c66">x</text>
+      <text x="62" y="32" font-family="Fraunces, serif" font-size="14" fill="#565c66">y</text>
+      <text x="65" y="52" font-family="Fraunces, serif" font-style="italic" font-size="14" fill="#565c66">y = mx + b</text>
+
+      <path d="M 60 230 C 110 70, 170 70, 210 160 C 235 210, 260 220, 300 190" stroke="#33479b" stroke-width="2.5" fill="none"/>
+
+      <path d="M 112 250 L 112 80 C 140 66, 165 66, 194 128 L 194 250 Z" fill="#ffcf3f" opacity="0.55"/>
+      <text x="112" y="66" font-family="Fraunces, serif" font-style="italic" font-size="17" fill="#26282e">&#8747; f(x) dx</text>
+
+      <polygon points="238,38 238,100 300,100" fill="none" stroke="#26282e" stroke-width="1.6"/>
+      <rect x="238" y="88" width="12" height="12" fill="none" stroke="#26282e" stroke-width="1.2"/>
+      <text x="279" y="93" font-family="Fraunces, serif" font-style="italic" font-size="15" fill="#26282e">&#952;</text>
+      <text x="248" y="65" font-family="Fraunces, serif" font-size="12" fill="#565c66">hyp</text>
+    </svg>
+  </div>
+</header>
+
+<section id="subjects">
+  <h2>Subjects covered</h2>
+  <p class="section-lede">Full Ontario mathematics curriculum, grade 8 through 12, plus first- and second-year college math. If a topic isn't listed, ask — most gaps trace back to one or two earlier ideas, and we can work backward to find them.</p>
+
+  <div class="subject-group">
+    <h3>Grade 8</h3>
+    <p class="group-note">Ontario elementary math strands — the foundation everything after builds on.</p>
+    <ul class="subject-list">
+      <li>Number sense &amp; operations <span class="level">Strand</span></li>
+      <li>Algebra &amp; patterning <span class="level">Strand</span></li>
+      <li>Data &amp; probability <span class="level">Strand</span></li>
+      <li>Spatial sense &amp; geometry <span class="level">Strand</span></li>
+      <li>Financial literacy <span class="level">Strand</span></li>
+    </ul>
+  </div>
+
+  <div class="subject-group">
+    <h3>Grade 9</h3>
+    <ul class="subject-list">
+      <li>Mathematics, De-streamed <span class="level">MTH1W</span></li>
+    </ul>
+  </div>
+
+  <div class="subject-group">
+    <h3>Grade 10</h3>
+    <ul class="subject-list">
+      <li>Principles of Mathematics, Academic <span class="level">MPM2D</span></li>
+      <li>Foundations of Mathematics, Applied <span class="level">MFM2P</span></li>
+    </ul>
+  </div>
+
+  <div class="subject-group">
+    <h3>Grade 11</h3>
+    <ul class="subject-list">
+      <li>Functions, University <span class="level">MCR3U</span></li>
+      <li>Functions &amp; Applications, Univ./College <span class="level">MCF3M</span></li>
+      <li>Foundations for College Mathematics <span class="level">MBF3C</span></li>
+      <li>Math for Work &amp; Everyday Life, Workplace <span class="level">MEL3E</span></li>
+    </ul>
+  </div>
+
+  <div class="subject-group">
+    <h3>Grade 12</h3>
+    <ul class="subject-list">
+      <li>Advanced Functions, University <span class="level">MHF4U</span></li>
+      <li>Calculus &amp; Vectors, University <span class="level">MCV4U</span></li>
+      <li>Mathematics of Data Management, Univ. <span class="level">MDM4U</span></li>
+      <li>Foundations for College Mathematics <span class="level">MAP4C</span></li>
+      <li>Mathematics for College Technology <span class="level">MCT4C</span></li>
+      <li>Math for Work &amp; Everyday Life, Workplace <span class="level">MEL4E</span></li>
+    </ul>
+  </div>
+
+  <div class="subject-group">
+    <h3>College level — Lambton College</h3>
+    <p class="group-note">Support for students taking Lambton College's math and statistics courses.</p>
+    <ul class="subject-list">
+      <li>Business Mathematics <span class="level">MTH-1002</span></li>
+      <li>Business Mathematics I <span class="level">MTH-1223</span></li>
+      <li>Finance &amp; Accounting Math <span class="level">MTH-2254</span></li>
+      <li>Business Statistics <span class="level">STA-1103</span></li>
+      <li>Mathematics for Technology I <span class="level">MTH-1904</span></li>
+      <li>Mathematics for Technology II <span class="level">MTH-2904</span></li>
+      <li>Mathematics for Technology III <span class="level">MTH-3903</span></li>
+      <li>Mathematics for Technology IV <span class="level">MTH-4903</span></li>
+      <li>Statistics for Technology <span class="level">STA-1903</span></li>
+    </ul>
+  </div>
+
+  <p class="subjects-source-note">Course names and codes follow the Ontario Ministry of Education secondary mathematics curriculum and Lambton College's published course list. Ministries and colleges update codes and offerings periodically, so it's worth confirming current details against a student's actual course outline before booking.</p>
+</section>
+
+<section id="about">
+  <h2>About Preeti</h2>
+  <p class="section-lede">Ontario College of Teachers certified (Junior Division; Intermediate Mathematics &amp; Science; Senior Division Mathematics), with an M.Sc. in Mathematics from Himachal Pradesh University.</p>
+  <p>Teaching experience began in India, from 2008 to 2018, across secondary-level classrooms, followed by four years of tutoring and teaching experience in Ontario — including LTO and occasional teaching positions with the Lambton Kent, Superior-Greenstone, and Superior North school boards, and a stint as a subject tutor at Mathnasium. Comfortable across the full range of the curriculum, from a Grade 8 student catching up on fractions to a college student working through Calc II or business statistics.</p>
+  <p>Sessions run one-to-one or in small batches with other students on the same subject, so instruction stays targeted to where each student actually needs help. Tutoring is in person by default; online sessions are available on special request.</p>
+  <ul class="skills-list">
+    <li>Curriculum-aligned instruction across Ontario Grade 8–12 math and Lambton College courses</li>
+    <li>Diagnostic approach that pinpoints and closes specific gaps rather than re-teaching everything</li>
+    <li>Clear, step-by-step explanations paced to how each student learns</li>
+    <li>Experience supporting English Language Learners (ESL)</li>
+    <li>Multilingual support in English, Hindi, and Punjabi</li>
+  </ul>
+</section>
+
+<section id="how">
+  <h2>How it works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="num"></div>
+      <div>
+        <h3>Free 20-minute intro call</h3>
+        <p>We talk through what's going on in the class, what's been tried already, and whether we're a good fit before anything is booked.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num"></div>
+      <div>
+        <h3>A short baseline check</h3>
+        <p>A handful of problems, not a test, to see exactly which skills are solid and which ones are shaky — so the first real session isn't spent guessing.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num"></div>
+      <div>
+        <h3>Hourly sessions, on a schedule that fits</h3>
+        <p>Sessions are booked by the hour and can run weekly, biweekly, or a few times a week when there's a syllabus to cover before a test or exam. In person by default; online available on special request.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num"></div>
+      <div>
+        <h3>Notes after every session</h3>
+        <p>A short recap of what we covered and what to practice before next time, sent the same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <h2>Request a session</h2>
+  <p class="section-lede">Already enrolled? Use this form to request sessions — the subject, how many sessions you'd like, and your preferred time for each — and a schedule will be confirmed with you.</p>
+  <form class="contact-form" data-success-message="Session request sent — a schedule will be confirmed by email soon.">
+    <input type="hidden" name="access_key" value="4bf72740-04ec-4abf-b1ff-f7bb59ec914f">
+    <input type="hidden" name="subject" value="New session request — Preeti Nag Math Tutoring">
+    <input type="hidden" name="from_name" value="Preeti Nag Math Tutoring website">
+    <input type="text" name="name" placeholder="Student name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="course" placeholder="Subject / course (e.g. MHF4U, MTH-1904)" required>
+    <input type="number" name="sessions_requested" placeholder="Number of sessions requested" min="1" required>
+    <textarea name="preferred_times" placeholder="Preferred time(s) for each session (e.g. Tuesdays 5–6pm, Saturdays 10am)" required></textarea>
+    <textarea name="notes" placeholder="Anything else to know before the first session"></textarea>
+    <button class="btn btn-solid" type="submit">Request session</button>
+    <p class="form-status" aria-live="polite"></p>
+  </form>
+</section>
+
+<section id="testimonials">
+  <h2>Student Testimonials</h2>
+  <div class="testimonial">
+    <p class="quote">"[Placeholder — replace with a real quote once you have one.] My son went from dreading precalc homework to actually finishing it before dinner. The weekly recap emails were what sold me."</p>
+    <p class="attr">— [Parent name], parent of a [grade]-grade student</p>
+  </div>
+
+  <div class="testimonial-form-wrap">
+    <h3>Share your experience</h3>
+    <p class="section-lede">Studied with Preeti? Leave a note below — submissions are reviewed by the site admin before being published here.</p>
+    <form class="contact-form" data-success-message="Thanks — your testimonial has been submitted for review.">
+      <input type="hidden" name="access_key" value="4bf72740-04ec-4abf-b1ff-f7bb59ec914f">
+      <input type="hidden" name="subject" value="New testimonial submission — Preeti Nag Math Tutoring">
+      <input type="hidden" name="from_name" value="Preeti Nag Math Tutoring website">
+      <input type="text" name="name" placeholder="Your name (or parent's name)" required>
+      <input type="text" name="course" placeholder="Subject / course studied (e.g. MHF4U)">
+      <textarea name="testimonial" placeholder="Your experience working together" required></textarea>
+      <button class="btn btn-solid" type="submit">Submit testimonial</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<section id="rates">
+  <h2>Rates</h2>
+  <p>The table below lists hourly rates for the tutoring services offered. Working with a fully OCT-certified teacher who brings 15+ years of classroom experience is reflected in this pricing.</p>
+  <p>For a more affordable option, small-batch sessions are also available — the group stays small enough that each student still gets individual attention, while working alongside a peer covering the same material.</p>
+  <p>A Community Support Program is available for low-income families; get in touch to discuss eligibility.</p>
+  <div class="rates">
+    <div class="rate-row">
+      <span>High School (Grades 9–12) — 1-on-1</span>
+      <span class="amount">$45/hour</span>
+    </div>
+    <div class="rate-row">
+      <span>College courses (e.g. Lambton College) — 1-on-1</span>
+      <span class="amount">$45/hour</span>
+    </div>
+    <div class="rate-row">
+      <span>Grade 7–8 Prep — 1-on-1</span>
+      <span class="amount">$40/hour</span>
+    </div>
+    <div class="rate-row">
+      <span>Small-batch sessions (2–4 students, same subject)</span>
+      <span class="amount">$30/hour</span>
+    </div>
+  </div>
+  <p class="rates-note">Rates shown are starting/typical rates and may vary with subject, session length, and package. Get in touch for an exact quote for your situation.</p>
+</section>
+
+<section id="contact">
+  <h2>Get in touch</h2>
+  <div class="contact-grid">
+    <ul class="contact-list">
+      <li><span class="label">Email</span><a href="mailto:nag.preeti18@gmail.com">nag.preeti18@gmail.com</a></li>
+      <li><span class="label">Phone / text</span>(226) 886-6942</li>
+      <li><span class="label">Location</span>Sarnia, ON — online or in person</li>
+      <li><span class="label">Booking</span><a href="#">[Calendly / booking link]</a></li>
+    </ul>
+    <form class="contact-form" data-success-message="Message sent — you'll hear back soon.">
+      <input type="hidden" name="access_key" value="4bf72740-04ec-4abf-b1ff-f7bb59ec914f">
+      <input type="hidden" name="subject" value="New inquiry — Preeti Nag Math Tutoring">
+      <input type="hidden" name="from_name" value="Preeti Nag Math Tutoring website">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="What are you working on?" required></textarea>
+      <button class="btn btn-solid" type="submit">Send message</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="year"></span> Preeti Nag</span>
+  <span>Sarnia, ON · Online &amp; in person</span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  document.querySelectorAll('form.contact-form').forEach(function (form) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const statusEl = form.querySelector('.form-status');
+      const button = form.querySelector('button[type="submit"]');
+      const originalLabel = button.textContent;
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      statusEl.textContent = '';
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form)
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          statusEl.textContent = form.dataset.successMessage || 'Sent — thank you.';
+          statusEl.style.color = '#33479b';
+          form.reset();
+        } else {
+          statusEl.textContent = 'Something went wrong — please email nag.preeti18@gmail.com directly.';
+          statusEl.style.color = '#b3261e';
+        }
+      } catch (err) {
+        statusEl.textContent = 'Something went wrong — please email nag.preeti18@gmail.com directly.';
+        statusEl.style.color = '#b3261e';
+      } finally {
+        button.disabled = false;
+        button.textContent = originalLabel;
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
